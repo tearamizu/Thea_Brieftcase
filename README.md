@@ -71,4 +71,4 @@ Jika Anda ingin berkontribusi pada project ini, jangan. Mending di fork aja wkak
 
 ## Lisensi
 
-project ini dilisensikan di bawah [MIT License](LICENSE)(Keknya.).
+project ini dilisensikan di bawah [MIT License](LICENSE) (Keknya.).
