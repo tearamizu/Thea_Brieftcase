@@ -52,9 +52,9 @@ project ini memiliki struktur folder sebagai berikut:
    ```javac -d bin src/**/*.java
    java -cp bin App
    ```
-   ataau
+   atau
 
-    ``java -jar Thea_Brieftasche.jar
+    ```java -jar Thea_Brieftasche.jar
     ```
 
 ## Manajemen Dependensi
