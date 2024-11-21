@@ -39,22 +39,26 @@ project ini memiliki struktur folder sebagai berikut:
 ## Cara Menggunakan
 
 1. **Kloning Repositori**:
-   ```sh
+   ```
+   sh
    git clone https://github.com/tearamizu/Thea_Brieftcase.git
    cd Thea_Brieftcase
    javac -d bin src/**/*.java
    ```
 2. **Buka project di Visual Studio Code Atau Terminal**:
-   ```code .
+   ```
+   code .
    ```
    
 3. **Jalankan Aplikasi**:
-   ```javac -d bin src/**/*.java
+   ```
+   javac -d bin src/**/*.java
    java -cp bin App
    ```
    atau
 
-    ```java -jar Thea_Brieftasche.jar
+    ```
+    java -jar Thea_Brieftasche.jar
     ```
 
 ## Manajemen Dependensi
