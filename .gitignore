@@ -1,2 +1,4 @@
 # Ignore folder NOUP
 NOUP/
+transactions.dat
+transactionsBackup.dat
