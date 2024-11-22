@@ -4,22 +4,15 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Brieftasche {
-    private int userCount;
     private ArrayList<User> users;
 
     public Brieftasche() {
-        this.userCount = 0;
         this.users = new ArrayList<>();
     }
 
     public void addNewUser(String username, PasswordSecurity password, Address address, Date dateOfBirth, PinSecurity pin) {
         User newUser = new User(username, password, address, dateOfBirth, pin);
         users.add(newUser);
-        userCount++;
-    }
-
-    public int getUserCount() {
-        return userCount;
     }
 
     public ArrayList<User> getUsers() {
@@ -38,9 +31,9 @@ public class Brieftasche {
     public int validateLogin(String username, String password) {
         User user = getUserByUsername(username);
         if (username.isEmpty() || password.isEmpty())
-            return 1; //semua field harus diisi
+            return 1; // Semua field harus diisi
         if (user == null) {
-            return 10; // Username tidak ditemukan
+            return 10; // Username tidak ada
         }
         if (!user.getPassword().checkAttribute(password)) {
             return 2; // Password salah
@@ -104,7 +97,7 @@ public class Brieftasche {
             case 9:
                 return "Username sudah ada";
             case 10: 
-                return "Username tidak ditemukan";
+                return "Username tidak ada";
             default:
                 return "Unknown Error";
         }
@@ -122,7 +115,6 @@ public class Brieftasche {
     public void loadTransactionsFromFile(String filename) {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
             users = (ArrayList<User>) ois.readObject();
-            userCount = users.size();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }

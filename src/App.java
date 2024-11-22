@@ -9,7 +9,7 @@ public class App {
         brieftasche.loadTransactionsFromFile("transactions.dat");
 
         // Add dummy data if no users are loaded
-        if (brieftasche.getUserCount() == 0) {
+        if (brieftasche.getUsers().isEmpty()) {
             addDummyData(brieftasche);
         }
 
