@@ -141,11 +141,6 @@ public class LoginPage extends javax.swing.JFrame {
         String usernameText = username.getText().trim();
         String passwordText = new String(password.getPassword()).trim();
 
-        if (usernameText.isEmpty() || passwordText.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Username dan Password harus diisi");
-            return;
-        }
-
         int validationCode = brieftasche.validateLogin(usernameText, passwordText);
         if (validationCode != 0) {
             JOptionPane.showMessageDialog(this, Brieftasche.getErrorMessage(validationCode));

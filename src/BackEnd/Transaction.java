@@ -34,13 +34,13 @@ public class Transaction implements Serializable {
 
     public static int validateTransaction(int amount, String type, String note, int balance) {
         if (amount < 1000) {
-            return 1; // Amount must be greater than 1000
+            return 1; // Jumlah minimal 1000
         }
         if (type.equals("Pengeluaran") && amount > balance) {
-            return 2; // Insufficient balance
+            return 2; // Saldo tidak cukup
         }
         if (note.isEmpty()) {
-            return 3; // Note cannot be empty
+            return 3; // Catatan tidak boleh kosong
         }
         return 0; // Valid
     }

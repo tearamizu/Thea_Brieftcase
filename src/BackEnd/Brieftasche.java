@@ -37,8 +37,10 @@ public class Brieftasche {
 
     public int validateLogin(String username, String password) {
         User user = getUserByUsername(username);
+        if (username.isEmpty() || password.isEmpty())
+            return 1; //semua field harus diisi
         if (user == null) {
-            return 1; // Username tidak ditemukan
+            return 10; // Username tidak ditemukan
         }
         if (!user.getPassword().checkAttribute(password)) {
             return 2; // Password salah
@@ -69,7 +71,7 @@ public class Brieftasche {
             return 6; // PIN harus memiliki 4 digit dan hanya terdiri dari angka
         }
         String[] dobParts = dob.split("-");
-        if (dobParts.length != 3 || dobParts[0].equals("00") || dobParts[1].equals("00") || dobParts[2].equals("0000")) {
+        if (dobParts.length != 3) {
             return 7; // Format tanggal lahir tidak valid
         }
         int day = Integer.parseInt(dobParts[0]);
@@ -84,7 +86,7 @@ public class Brieftasche {
     public static String getErrorMessage(int errorCode) {
         switch (errorCode) {
             case 1:
-                return "Username tidak ditemukan";
+                return "Semua field Harus diisi";
             case 2:
                 return "Password salah";
             case 3:
@@ -101,8 +103,10 @@ public class Brieftasche {
                 return "Tanggal tidak valid untuk bulan dan tahun yang diberikan";
             case 9:
                 return "Username sudah ada";
+            case 10: 
+                return "Username tidak ditemukan";
             default:
-                return "Registrasi tidak valid";
+                return "Unknown Error";
         }
     }
 
